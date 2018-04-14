@@ -102,7 +102,7 @@ var getTokenDetails = function getTokenDetails(tempCharDetails, foundIndex) {
 };
 
 var isTokenFound = function isTokenFound(sliceDetails) {
-  return sliceDetails ? true : false;
+  return sliceDetails.type !== 'unknown' ? true : false;
 };
 
 var vTokenize = exports.vTokenize = function vTokenize(str, maxTokenLength, getSliceDetails) {

@@ -1,6 +1,6 @@
 {
   "name": "vtokenize",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A simple string tokenizer that makes tokens by looping through the given string.",
   "keywords": [
     "tokenizer",
