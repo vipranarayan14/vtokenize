@@ -2,17 +2,17 @@ const cannotSeek = (seeked, maxSeek, inStr, i) =>
 
   seeked === maxSeek || i === inStr.length - 1;
 
-const getTokenDetails = (tempCharDetails, foundIndex) =>
+const getTokenDetails = (tempSliceDetails, foundIndex) =>
 
   (foundIndex > -1) ? {
 
     foundIndex,
-    token: tempCharDetails[foundIndex]
+    token: tempSliceDetails[foundIndex]
 
   } : {
 
     foundIndex: 0,
-    token: tempCharDetails[0]
+    token: tempSliceDetails[0]
 
   };
 
@@ -54,7 +54,7 @@ export const vTokenize = (str, maxTokenLength, getSliceDetails) => {
 
       tokens.push(tokenDetails.token);
 
-      // resetting the 'i' to pick the next untokenized char.
+      // resetting the 'i' to pick up the next untokenized char.
       i -= (seeked - 1) - foundIndex;
 
       // reset variables
