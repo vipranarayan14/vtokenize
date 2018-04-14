@@ -87,16 +87,16 @@ var cannotSeek = function cannotSeek(seeked, maxSeek, inStr, i) {
   return seeked === maxSeek || i === inStr.length - 1;
 };
 
-var getTokenDetails = function getTokenDetails(tempCharDetails, foundIndex) {
+var getTokenDetails = function getTokenDetails(tempSliceDetails, foundIndex) {
   return foundIndex > -1 ? {
 
     foundIndex: foundIndex,
-    token: tempCharDetails[foundIndex]
+    token: tempSliceDetails[foundIndex]
 
   } : {
 
     foundIndex: 0,
-    token: tempCharDetails[0]
+    token: tempSliceDetails[0]
 
   };
 };
@@ -139,7 +139,7 @@ var vTokenize = exports.vTokenize = function vTokenize(str, maxTokenLength, getS
 
       tokens.push(tokenDetails.token);
 
-      // resetting the 'i' to pick the next untokenized char.
+      // resetting the 'i' to pick up the next untokenized char.
       i -= seeked - 1 - foundIndex;
 
       // reset variables
