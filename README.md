@@ -10,19 +10,22 @@ npm install vtokenize
 
 ## Node usage
 
-```bash
+```js
 const { vTokenize } = require('vtokenize');
 
 vTokenize(stringToTokenize, maxTokenLength, stringSlice => {
 
   const map = {
-    'str': { token: stringSlice, length: stringSlice.length },
-    'ing': { token: stringSlice, length: stringSlice.length },
-    'To': { token: stringSlice, length: stringSlice.length },
-    'Token': { token: stringSlice, length: stringSlice.length },
-    'ize': { token: stringSlice, length: stringSlice.length }
+    'str': { token: stringSlice, type: 'someType' },
+    'ing': { token: stringSlice, type: 'someType' },
+    'To': { token: stringSlice, type: 'someType' },
+    'Token': { token: stringSlice, type: 'someType' },
+    'ize': { token: stringSlice, type: 'someType' }
   };
 
-  return map[stringSlice] ? map[stringSlice] : '';
+  return map[stringSlice] ? map[stringSlice] : { token: stringSlice, type: 'unknown'};
 
 });
+```
+
+**Note:** The 'type' key in the returned object and returning an object with `type: 'unknown'` when  `stringSlice` is not found, are compulsory.
