@@ -18,7 +18,7 @@ const getTokenDetails = (tempCharDetails, foundIndex) =>
 
 const isTokenFound = sliceDetails =>
 
-  sliceDetails ? true : false;
+  (sliceDetails.type !== 'unknown') ? true : false;
 
 export const vTokenize = (str, maxTokenLength, getSliceDetails) => {
 
